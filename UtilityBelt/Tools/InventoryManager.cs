@@ -546,7 +546,7 @@ Provides a command-line interface to inventory management.
         [Summary("Checks if the item giver is currently running")]
         [Example("isitemgiverrunning[]", "Returns 1 if the item-giver is currently running")]
         public object Isitemgiverrunning() {
-            return IGRunning;
+            return IGRunning ? 1 : 0;
         }
         #endregion isitemgiverrunning[]
         #endregion //Expressions

@@ -172,7 +172,7 @@ Documents\Decal Plugins\UtilityBelt\autovendor\default.utl
         [Summary("Checks if auto-vendoring is in progress")]
         [Example("isautovendoring[]", "Returns 1 if auto-vendoring is in progress")]
         public object Isautovendoring() {
-            return isRunning;
+            return isRunning ? 1 : 0;
         }
         #endregion //isautovendoring[]
         #endregion Expressions
