@@ -563,6 +563,17 @@ namespace UtilityBelt.Tools {
             return text;
         }
         #endregion //chatboxpaste[string message]
+        #region chatthink[string message]
+        [ExpressionMethod("chatthink")]
+        [ExpressionParameter(0, typeof(string), "message", "Message to send to yourself")]
+        [ExpressionReturn(typeof(string), "Returns the string sent to yourself")]
+        [Summary("Sends a text message to yourself in the chatbox")]
+        [Example("chatthink[test]", "results in: You think, \"test\"")]
+        public object Chatthink(string text) {
+            Util.DispatchChatToBoxWithPluginIntercept("/w " + UB.Core.CharacterFilter.Name + ", " + text);
+            return text;
+        }
+        #endregion // chatthink[string message]
         #region chatboxpaste[string message]
         [ExpressionMethod("chatboxpaste")]
         [ExpressionParameter(0, typeof(string), "message", "Message to paste")]
