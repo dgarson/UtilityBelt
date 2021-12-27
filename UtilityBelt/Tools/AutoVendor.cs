@@ -164,6 +164,19 @@ Documents\Decal Plugins\UtilityBelt\autovendor\default.utl
         public void DoVendor(string _, Match args) {
             UB_vendor(args.Groups["params"].Value);
         }
+
+        #region Expressions
+        #region isautovendoring[]
+        [ExpressionMethod("isautovendoring")]
+        [ExpressionReturn(typeof(double), "Returns 1 if auto-vendoring is in progress, 0 otherwise")]
+        [Summary("Checks if auto-vendoring is in progress")]
+        [Example("isautovendoring[]", "Returns 1 if auto-vendoring is in progress")]
+        public object Isautovendoring() {
+            return isRunning ? 1 : 0;
+        }
+        #endregion //isautovendoring[]
+        #endregion Expressions
+
         private DateTime vendorTimestamp = DateTime.MinValue;
         private int vendorOpening = 0;
         private static WorldObject vendor = null;

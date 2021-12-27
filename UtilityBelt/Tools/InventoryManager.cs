@@ -540,6 +540,15 @@ Provides a command-line interface to inventory management.
             return 1;
         }
         #endregion //actiontrygiveprofile[string lootprofile, string target]
+        #region isitemgiverrunning[]
+        [ExpressionMethod("isitemgiverrunning")]
+        [ExpressionReturn(typeof(double), "Returns 1 if the item-giver is currently running, 0 otherwise")]
+        [Summary("Checks if the item giver is currently running")]
+        [Example("isitemgiverrunning[]", "Returns 1 if the item-giver is currently running")]
+        public object Isitemgiverrunning() {
+            return IGRunning ? 1 : 0;
+        }
+        #endregion isitemgiverrunning[]
         #endregion //Expressions
 
         // TODO: support AutoPack profiles when cramming
